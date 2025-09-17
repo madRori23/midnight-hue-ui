@@ -27,9 +27,12 @@ const Login = () => {
       description: "Welcome back to Gym Buddies!",
     });
     
-    // Navigate to home page after delay
+    // For demo: Navigate based on username (in real app, check from backend)
+    // If username contains "pass", treat as pass holder, otherwise non-pass holder
+    const isPassHolder = formData.username.toLowerCase().includes("pass");
+    
     setTimeout(() => {
-      navigate("/home");
+      navigate(isPassHolder ? "/home" : "/home-non-pass");
     }, 1000);
   };
 

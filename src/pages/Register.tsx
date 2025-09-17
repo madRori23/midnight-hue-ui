@@ -39,8 +39,11 @@ const Register = () => {
       description: "Welcome to Gym Buddies! Your account has been created.",
     });
     
+    // Navigate based on membership type
+    const isPassHolder = formData.membershipType === "buddy-pass";
+    
     setTimeout(() => {
-      navigate("/home");
+      navigate(isPassHolder ? "/home" : "/home-non-pass");
     }, 1000);
   };
 
